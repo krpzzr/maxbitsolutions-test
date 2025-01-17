@@ -1,7 +1,22 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const Error: React.FC = () => {
-  return <div>404 - Page Not Found</div>;
+import styles from './styles.module.scss';
+
+const NotFound: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleGoHome = () => {
+    navigate('/'); // Переход на главную страницу
+  };
+
+  return (
+    <div className={styles.wrapper}>
+      <img src="/page-not-found.png" alt="404 Page" />
+      <h2>Oops! Looks like you're lost...</h2>
+      <button onClick={handleGoHome}>Take Me Home</button>
+    </div>
+  );
 };
 
-export default Error;
+export default NotFound;
