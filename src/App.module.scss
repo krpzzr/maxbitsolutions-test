@@ -1,0 +1,9 @@
+$primary-color: #007bff;
+$max-width: 1024px;
+$padding: 20px;
+
+.app {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: $padding;
+}
