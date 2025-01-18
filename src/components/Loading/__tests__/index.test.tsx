@@ -6,7 +6,6 @@ describe('Loading Component', () => {
   it('should render the loading text', () => {
     render(<Loading />);
 
-    // Проверяем, что текст "Loading..." отображается
     expect(screen.getByText('Loading...')).toBeInTheDocument();
   });
 });

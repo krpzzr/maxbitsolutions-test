@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from '../App';
 
-// Используем мокированный MemoryRouter
 jest.mock('react-router-dom', () => ({
   MemoryRouter: ({ children }: { children: React.ReactNode }) => (
     <div>{children}</div>

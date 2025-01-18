@@ -2,7 +2,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { fetchCocktails } from '../cocktailsActions';
 
-// Мокируем axios
 jest.mock('axios');
 
 describe('fetchCocktails Thunk', () => {
@@ -28,16 +27,13 @@ describe('fetchCocktails Thunk', () => {
       },
     };
 
-    // Мокируем успешный ответ от API
     (axios.get as jest.Mock).mockResolvedValue(mockResponse);
 
     const dispatch = jest.fn();
     const getState = jest.fn();
 
-    // Вызываем Thunk
     const result = await fetchCocktails(cocktailCode)(dispatch, getState, undefined);
 
-    // Проверяем, что действия были вызваны с правильными данными
     expect(result.payload).toEqual({
       cocktailCode: 'margarita',
       cocktails: [

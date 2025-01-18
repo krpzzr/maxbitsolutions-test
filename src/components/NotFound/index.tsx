@@ -7,7 +7,7 @@ const NotFound: React.FC = () => {
   const navigate = useNavigate();
 
   const handleGoHome = () => {
-    navigate('/'); // Переход на главную страницу
+    navigate('/');
   };
 
   return (

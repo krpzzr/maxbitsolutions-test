@@ -1,17 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es6", // Целевая версия JavaScript
-    "module": "esnext", // Используем ES Modules
-    "outDir": "./dist", // Директория для скомпилированных файлов
-    "rootDir": "./src", // Корневая директория исходного кода
-    "allowJs": false, // Запрещаем использование JavaScript
-    "strict": true, // Включаем строгую проверку типов
-    "esModuleInterop": true, // Включаем поддержку ES Modules
-    "skipLibCheck": true, // Пропускаем проверку типов в библиотеках
-    "resolveJsonModule": true, // Разрешаем импорт JSON
-    "moduleResolution": "node", // Используем Node.js-стиль разрешения модулей
-    "jsx": "react-jsx", // Используем React JSX
-    "baseUrl": "./src", // Базовый путь для абсолютных импортов
+    "target": "es6",
+    "module": "esnext",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "allowJs": false,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
     "paths": {
       "components/*": ["components/*"],
       "locales/*": ["locales/*"],
@@ -25,12 +25,12 @@
     }
   },
   "include": [
-    "src/**/*" // Включаем все файлы в директории src
+    "src/**/*"
 , "src/__tests__/App.test.tsx"  ],
   "exclude": [
-    "node_modules", // Исключаем node_modules
-    "dist", // Исключаем директорию dist
-    "**/*.test.js", // Исключаем тестовые файлы
-    "**/*.js" // Исключаем JavaScript-файлы
+    "node_modules",
+    "dist",
+    "**/*.test.js",
+    "**/*.js"
   ]
 }
