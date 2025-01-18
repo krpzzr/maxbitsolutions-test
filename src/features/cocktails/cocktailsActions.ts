@@ -2,25 +2,26 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 import { getAPIUrl } from 'utils/urlUtils';
+import { CocktailApiResponse, FetchCocktailsResult } from './cocktailsTypes';
 
 const ALLOWED_CODES = ['margarita', 'mojito', 'a1', 'kir'];
 
 export const fetchCocktails = createAsyncThunk(
   'cocktails/fetchCocktails',
-  async (cocktailCode: string) => {
+  async (cocktailCode: string): Promise<FetchCocktailsResult> => {
     if (!ALLOWED_CODES.includes(cocktailCode)) {
       throw new Error('Invalid cocktail code');
     }
 
-    const response = await axios.get(
+    const response = await axios.get<CocktailApiResponse>(
       `${getAPIUrl()}/search.php?s=${cocktailCode}`
     );
 
     const filteredCocktails = response.data.drinks
-      .filter((drink: any) =>
+      .filter((drink) =>
         drink.strDrink.toLowerCase().includes(cocktailCode.toLowerCase())
       )
-      .map((drink: any) => ({
+      .map((drink) => ({
         idDrink: drink.idDrink,
         strDrink: drink.strDrink,
         strCategory: drink.strCategory,

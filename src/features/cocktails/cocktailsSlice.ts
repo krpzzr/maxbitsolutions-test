@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { fetchCocktails } from './cocktailsActions';
 import { CocktailsState } from './cocktailsTypes';
 
-const initialState: CocktailsState = {
+export const initialState: CocktailsState = {
   cocktailsByCode: {},
   loading: false,
   error: null,
